@@ -21,25 +21,49 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div class="myheader"> <nav id="site-navigation" class="main-navigation" role="navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'sashacamilo' ); ?></button>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?> </div>
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'sashacamilo' ); ?></a>
 
+
+
+
 	<header id="masthead" class="site-header" role="banner">
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'sashacamilo' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+	<?php
+		/*
+ * Sample implementation of the Custom Header feature.
+ *
+ * You can add an optional custom header image to header.php like so ...
+ */
+	 if ( get_header_image() ) : ?>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+		<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
+	</a>
+	<?php endif; // End header image check. 
+/*
+ * @link https://developer.wordpress.org/themes/functionality/custom-headers/
+ *
+ * @package SashaCamilo
+ */?>
 		
 		<div class="site-branding">
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php
 			endif;
+			
+			
 
 			$description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) : ?>
+				<p> </p> 
+				<p> </p> 
 				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 			<?php
 			endif; ?>
@@ -47,6 +71,7 @@
 
 		
 		</nav><!-- #site-navigation -->
+		
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

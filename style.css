@@ -48,22 +48,206 @@ html {
 }
 
 body {
-	margin:auto;
-	width: 60%;
-	background-color: pink;
-	color: blue;
+	
+	width: 100%;
+	background:url("sashacam.png");
+
+	color: black;
+    margin: 0;
+    padding: 0;
+height: 13em;
+background-size: 30em;
 }
 
+a {
+	color: violet;
+}
+
+
+
+a:hover,
+a:focus,
+a:active {
+	color: yellow;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+
 .site {
-background-color: #c7b39b;
-	color: blue;
-	padding: 3em;
+background:url("paper.jpg");
+	color: back;
+	
+	width: 70%;
+	margin: 0 15%;
+	position: absolute;
+	padding: auto;
+
+	
+	
 	}
+
+.menu.nav-menu{
+color:black;
+margin: auto;
+
+width: 100%;
+padding-right: 40px;
+font-size: 1.2em;
+}
 
 
 header{
-background: green;
+padding:2em 0em 1em 0em;
+margin: auto;
+
 }
+
+.site-navigation{
+color: brown;
+}
+
+.main-navigation{
+background: #CC0033;
+margin: auto;
+padding: auto;
+	
+	
+	width: 100%;
+
+	text-align: center;
+	color:black;
+	float: center;
+	vertical-align: middle;
+	
+	}
+	
+	
+	
+	.main-navigation ul {
+	display: block;
+	list-style: none;
+	margin: auto;
+	padding-left: auto;
+}
+
+.main-navigation li {
+	
+	position: relative;
+}
+
+.main-navigation a {
+	display: inline;
+	text-decoration: none;
+}
+	
+.main-navigation ul {
+		display: inline;
+		margin: auto;
+	}
+	.main-navigation li{
+		display: inline;
+		margin: 1% 2%;
+	}
+	
+	button.menu-toggle{
+	display: none;
+	}	
+	
+footer {
+
+}
+
+.site-content {
+padding:0em 5%;
+}
+
+.entry-header{
+padding: 0em;
+margin: 0em;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+.site-title{
+margin: auto;
+width: 100%;
+padding: auto;
+text-align: center;
+	
+	float: center;
+	vertical-align: middle;
+}
+
+p.site-description{
+margin: auto;
+width: 10em;
+text-align: center;
+padding-top: 0em;
+opacity: 0;
+}
+
+.site-header{
+background:url("usiki1.png");
+background-size: 100%;
+background-repeat: no-repeat;
+background-position: center bottom;
+padding:  0;
+margin:auto;
+
+
+}
+
+
+
+.site-info{
+background: #CC0033;
+color: white;
+}
+
+
+.entry-footer{
+border-bottom: 1px solid black;
+}
+
+
+h1, h2, h3, h4{
+font-family: ‘American Typewriter’, ‘Courier New’, Courier, Monaco, mono;
+color: #CC0033;
+}
+
+
+p, li, ul, .entry-footer, .entry-meta, .entry-title, .site-info{
+font-family: Baskerville, Georgia, Garamond, ‘Times New Roman’, Times, serif;
+}
+
+.menu-menu-1-container{
+text-align: center;
+}
+
+
+
+.entry-title{
+color: #CC0033;
+}
+
+[id^=menu-item]{
+margin: 1% 2%;
+}
+
+
+ .wp-caption.alignnone{
+ margin:auto;}  
 
 article,
 aside,
@@ -120,10 +304,7 @@ dfn {
 	font-style: italic;
 }
 
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
-}
+
 
 mark {
 	background: #ff0;
@@ -281,8 +462,8 @@ select,
 textarea {
 	color: #404040;
 	font-family: sans-serif;
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: 1em;
+	
 	line-height: 1.5;
 }
 
@@ -317,12 +498,12 @@ address {
 pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
+	font-size: 0.9em;
+	
 	line-height: 1.6;
 	margin-bottom: 1.6em;
 	max-width: 100%;
-	overflow: auto;
+	overflow: scroll;
 	padding: 1.6em;
 }
 
@@ -331,8 +512,8 @@ kbd,
 tt,
 var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
+	font-size: 0.9em;
+	
 }
 
 abbr,
@@ -435,8 +616,7 @@ input[type="submit"] {
 	background: #e6e6e6;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	color: rgba(0, 0, 0, .8);
-	font-size: 12px;
-	font-size: 0.75rem;
+	font-size: 0.75em;
 	line-height: 1;
 	padding: .6em 1em .4em;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -532,69 +712,19 @@ textarea {
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
-.site-navigation{
-color: brown;
-}
 
-.main-navigation{
-background: red;
-widrh: 100%;
-margin: none;
-}
 
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
-a {
-	color: royalblue;
-}
 
-a:visited {
-	color: purple;
-}
-
-a:hover,
-a:focus,
-a:active {
-	color: midnightblue;
-}
-
-a:focus {
-	outline: thin dotted;
-}
-
-a:hover,
-a:active {
-	outline: 0;
-}
 
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
-	backgtound: yellow;
-}
 
-.main-navigation ul {
-	display: none;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
 
-.main-navigation li {
-	float: left;
-	position: relative;
-}
 
-.main-navigation a {
-	display: block;
-	text-decoration: none;
-}
 
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -652,14 +782,6 @@ a:active {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
-}
 
 .site-main .comment-navigation,
 .site-main .posts-navigation,
@@ -702,8 +824,7 @@ a:active {
 	clip: auto !important;
 	color: #21759b;
 	display: block;
-	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: 0.875em;
 	font-weight: bold;
 	height: auto;
 	left: 5px;
@@ -780,6 +901,10 @@ a:active {
 
 /* Make sure select elements fit in widgets. */
 .widget select {
+	max-width: 100%;
+}
+
+.widget {
 	max-width: 100%;
 }
 
@@ -941,3 +1066,68 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+
+
+
+
+@media screen and (max-width: 750px) {
+	
+}
+
+@media screen and (max-width: 521px) {
+	
+
+}
+
+
+@media screen and (max-width: 480px) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation{
+background: #CC0033;
+margin: auto;
+padding: auto;
+	clear: both;
+	display: block;
+	
+	width: 100%;
+
+	text-align: center;
+	color:black;
+	float: center;
+	vertical-align: middle;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+	.main-navigation li{
+		display: block;
+	}
+	a {
+	float: center;
+	text-align:center;
+	
+	}
+	.site-header{
+background-size: 140%;
+} 
+
+.site{
+width: 80%;
+margin: 0 10%;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
