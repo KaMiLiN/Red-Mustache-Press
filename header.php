@@ -4,7 +4,6 @@
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package SashaCamilo
  */
@@ -49,21 +48,30 @@
  * @package SashaCamilo
  */?>
 		
-		<div class="site-branding">
+		<div class="site-branding"> 
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php
-			endif;
+			endif; 
 			
 			
+				$options = get_option( 'red_options_settings' );
+				$backgroundTheme = get_option( 'red_options_settings' );
+			?>
+			<p class="customGreeting"><?php print $options['red_text_field']; ?>
+				<br />
+				<!-- <?php print $backgroundTheme[red_radio_field]; ?> -->
+			</p>
+			
+			<?php
 
 			$description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) : ?>
 				<p> </p> 
-				<p> </p> 
+				
 				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 			<?php
 			endif; ?>

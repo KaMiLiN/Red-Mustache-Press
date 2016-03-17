@@ -2,7 +2,6 @@
 /**
  * SashaCamilo functions and definitions.
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package SashaCamilo
  */
@@ -150,3 +149,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+
+ set_post_thumbnail_size( 300, 300 ); // set the sizes for all the featured images
+
