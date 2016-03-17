@@ -19,6 +19,7 @@
 <?php wp_head(); ?>
 </head>
 
+
 <body <?php body_class(); ?>>
 <div class="myheader"> <nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'sashacamilo' ); ?></button>
@@ -59,11 +60,9 @@
 			
 			
 				$options = get_option( 'red_options_settings' );
-				$backgroundTheme = get_option( 'red_options_settings' );
+			
 			?>
 			<p class="customGreeting"><?php print $options['red_text_field']; ?>
-				<br />
-				<!-- <?php print $backgroundTheme[red_radio_field]; ?> -->
 			</p>
 			
 			<?php
@@ -77,6 +76,7 @@
 			endif; ?>
 		</div><!-- .site-branding -->
 
+		
 		
 		</nav><!-- #site-navigation -->
 		

@@ -79,6 +79,8 @@ function sashacamilo_setup() {
 endif;
 add_action( 'after_setup_theme', 'sashacamilo_setup' );
 
+require get_stylesheet_directory() .'/inc/options.php';
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -154,3 +156,46 @@ require get_template_directory() . '/inc/jetpack.php';
 
  set_post_thumbnail_size( 300, 300 ); // set the sizes for all the featured images
 
+/* We create and add the function that will modify the style. */
+/* This one changes the background color of the page. White, Grey, Red or Green */
+function pageBackgroundColor() {
+	$options = get_option( 'red_options_settings' );
+   	if ($options['red_radio_field'] == 'white'){
+   		echo '<style type="text/css">
+           	.site {background:#ffffff !important}
+           	#content{background:#ffffff !important}
+         	</style>';
+   	}elseif ($options['red_radio_field'] == 'grey'){
+   		echo '<style type="text/css">
+           	.site {background:#EEEEEE !important}
+           	#content{background:#EEEEEE !important}
+         	</style>';
+   	}elseif ($options['red_radio_field'] == 'red'){
+   		echo '<style type="text/css">
+           	.site {background: rgba(255, 200, 200, 1.0) !important}
+           	#content{background: rgba(255, 200, 200, 1.0) !important}
+         	</style>';
+   	}elseif ($options['red_radio_field'] == 'green'){
+   		echo '<style type="text/css">
+           	.site {background: rgba(200, 255, 200, 1.0) !important}
+           	#content{background: rgba(200, 255, 200, 1.0) !important}
+         	</style>';
+   	}
+}
+add_action('wp_enqueue_scripts', 'pageBackgroundColor');
+
+/* We create and add the function that will modify the style. */
+/* This one changes the font-size of the menu items. Small or Large */
+function menuSize() {
+   $options = get_option( 'red_options_settings' );
+   	if ($options['red_radio_menuSize'] == 'small'){
+   		echo '<style type="text/css">
+           	.menu.nav-menu {font-size:2.4em}
+         	</style>';
+   	}else{
+   		echo '<style type="text/css">
+           	.menu.nav-menu{font-size:2.0em !important}
+         	</style>';
+   	}
+}
+add_action('wp_enqueue_scripts', 'menuSize');
